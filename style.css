@@ -187,15 +187,98 @@ section h2::after { /* Subrayado decorativo */
 
 
 /* Sección Contacto */
-.contact-buttons {
-    display: flex; /* Para que los botones se alineen horizontalmente */
-    justify-content: center;
-    gap: 20px; /* Espacio entre los botones */
-    flex-wrap: wrap; /* Para que los botones se envuelvan en pantallas pequeñas */
-    margin-top: 20px;
+.contact-form-container {
+    background-color: var(--background-color);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    margin: 30px auto; /* Centrar y añadir espacio */
+    text-align: left; /* Alinear texto del formulario a la izquierda */
 }
 
-.contact-button {
+.email-display {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    box-sizing: border-box; /* Incluir padding y border en el ancho */
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permitir redimensionar solo verticalmente */
+    min-height: 120px;
+}
+
+.submit-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto; /* Ajustar ancho al contenido */
+    margin-top: 10px;
+}
+
+.submit-button i {
+    margin-left: 10px;
+}
+
+.submit-button:hover {
+    background-color: #555555;
+    transform: translateY(-2px);
+}
+
+.form-note {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: var(--light-text-color);
+    text-align: center;
+}
+
+.social-links-contact {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-button { /* Reutilizar estilos de botones para GitHub */
     display: inline-flex; /* Usar flexbox para alinear icono y texto */
     align-items: center;
     background-color: var(--primary-color);
@@ -253,8 +336,12 @@ footer {
         grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
     }
 
-    .contact-buttons {
-        flex-direction: column; /* Apilar botones en pantallas pequeñas */
-        align-items: center;
+    .contact-form-container {
+        padding: 20px; /* Reducir padding en pantallas pequeñas */
+    }
+
+    .submit-button {
+        width: 100%; /* Botón de enviar al 100% en móvil */
+        justify-content: center; /* Centrar contenido del botón */
     }
 }
