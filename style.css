@@ -1,0 +1,260 @@
+/* Variables CSS para colores (Blanco y Negro) */
+:root {
+    --primary-color: #000000; /* Negro principal */
+    --secondary-color: #f0f0f0; /* Blanco roto para fondos secundarios */
+    --text-color: #333333; /* Gris oscuro para texto principal */
+    --light-text-color: #666666; /* Gris medio para texto secundario */
+    --background-color: #ffffff; /* Blanco puro para fondo principal */
+    --border-color: #dddddd; /* Gris claro para bordes */
+}
+
+/* Reset básico y configuración de fuentes */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Encabezado (Header) */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+/* Enlaces de Redes Sociales en el Header */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 2em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color); /* Blanco claro al pasar el ratón */
+}
+
+/* Emojis con color adaptable */
+.emoji {
+    filter: grayscale(100%); /* Hace que los emojis sean monocromáticos */
+    -webkit-filter: grayscale(100%); /* Para compatibilidad con navegadores WebKit */
+    transition: color 0.3s ease; /* Transición para cuando el color del texto cambie */
+    display: inline-block; /* Asegura que el filtro se aplique bien */
+    vertical-align: middle; /* Alinea los emojis con el texto */
+}
+
+/* Para los emojis en secciones con fondo claro, el texto es oscuro */
+section:nth-child(odd) .emoji {
+    color: var(--text-color); /* Emojis en negro */
+}
+
+/* Para los emojis en secciones con fondo oscuro, el texto es claro */
+section:nth-child(even) .emoji {
+    color: var(--primary-color); /* Emojis en negro si el fondo es blanco */
+}
+
+/* Emojis dentro de texto que tienen un color definido por el padre */
+.hero p .emoji {
+    filter: grayscale(100%); /* Mantenerlos monocromáticos */
+}
+
+
+/* Secciones generales */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+section:nth-child(even) { /* Para alternar colores de fondo en las secciones */
+    background-color: var(--secondary-color);
+}
+
+section h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after { /* Subrayado decorativo */
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Sección Acerca de Mí (Hero) */
+.hero p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: var(--light-text-color);
+}
+
+.hero .unlu-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary-color);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero .unlu-link:hover {
+    color: var(--light-text-color);
+    border-color: var(--light-text-color);
+}
+
+/* Sección Habilidades */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.skill-item {
+    background-color: var(--background-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Usar flexbox para alinear icono, título y texto */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    text-align: center; /* Centrar texto dentro del item */
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Estilo para los iconos de habilidades (Font Awesome) */
+.skill-item .skill-icon {
+    font-size: 3.5em; /* Tamaño del icono */
+    color: var(--primary-color); /* Color del icono */
+    margin-bottom: 15px; /* Espacio debajo del icono */
+}
+
+
+/* SECCIÓN DE EFECTO FADE IN ON SCROLL */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px); /* Ligeramente desplazado hacia abajo */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transición suave */
+    will-change: opacity, transform; /* Optimización para el navegador */
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+
+/* Fin de la sección de efecto fade in on scroll */
+
+
+/* Sección Contacto */
+.contact-buttons {
+    display: flex; /* Para que los botones se alineen horizontalmente */
+    justify-content: center;
+    gap: 20px; /* Espacio entre los botones */
+    flex-wrap: wrap; /* Para que los botones se envuelvan en pantallas pequeñas */
+    margin-top: 20px;
+}
+
+.contact-button {
+    display: inline-flex; /* Usar flexbox para alinear icono y texto */
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button i { /* Estilo para los iconos dentro de los botones */
+    margin-right: 10px;
+    font-size: 1.2em; /* Ajusta el tamaño del icono */
+}
+
+.contact-button:hover {
+    background-color: #555555; /* Un gris más claro al pasar el ratón */
+}
+
+.github-button {
+    background-color: #333333; /* Color específico para el botón de GitHub (gris oscuro) */
+}
+
+.github-button:hover {
+    background-color: #666666;
+}
+
+#contact .contact-note {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: var(--light-text-color);
+}
+
+/* Pie de página (Footer) */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    section h2 {
+        font-size: 2em;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .contact-buttons {
+        flex-direction: column; /* Apilar botones en pantallas pequeñas */
+        align-items: center;
+    }
+}
