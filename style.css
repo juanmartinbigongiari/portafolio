@@ -203,16 +203,18 @@ section h2::after { /* Subrayado decorativo */
     margin-bottom: 25px;
 }
 
+/* Contenedor para los botones de contacto */
 .social-links-contact {
     margin-top: 30px;
-    display: flex;
-    justify-content: center;
+    display: flex; /* Utilizar flexbox para alinear elementos */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    gap: 20px; /* Espacio entre los botones */
+    flex-wrap: wrap; /* Permitir que los botones se envuelvan en pantallas pequeñas */
 }
 
-.contact-button { /* Reutilizar estilos de botones para GitHub */
-    display: inline-flex; /* Usar flexbox para alinear icono y texto */
+.contact-button {
+    display: inline-flex;
     align-items: center;
-    background-color: var(--primary-color);
     color: white;
     padding: 15px 30px;
     text-decoration: none;
@@ -221,18 +223,17 @@ section h2::after { /* Subrayado decorativo */
     transition: background-color 0.3s ease;
 }
 
-.contact-button i { /* Estilo para los iconos dentro de los botones */
+.contact-button i {
     margin-right: 10px;
-    font-size: 1.2em; /* Ajusta el tamaño del icono */
+    font-size: 1.2em;
 }
 
 .contact-button:hover {
-    background-color: #555555; /* Un gris más claro al pasar el ratón */
+    background-color: #555555;
 }
 
 .github-button {
-    background-color: #333333; /* Color específico para el botón de GitHub (gris oscuro) */
-    margin-left: 10px; /* Espacio entre botones */
+    background-color: #333333;
 }
 
 .github-button:hover {
@@ -240,8 +241,7 @@ section h2::after { /* Subrayado decorativo */
 }
 
 .email-button {
-    background-color: #D44638; /* Color representativo de Gmail (rojo) */
-    margin-right: 10px; /* Espacio entre botones */
+    background-color: #D44638;
 }
 
 .email-button:hover {
@@ -268,15 +268,15 @@ footer {
     }
 
     .skills-grid {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        grid-template-columns: 1fr;
     }
 
     .contact-info {
-        padding: 20px; /* Reducir padding en pantallas pequeñas */
+        padding: 20px;
     }
 
     .social-links-contact {
-        flex-direction: column; /* Apilar botones en pantallas pequeñas */
+        flex-direction: column; /* Apilar botones en pantallas muy pequeñas */
         align-items: center;
     }
 
